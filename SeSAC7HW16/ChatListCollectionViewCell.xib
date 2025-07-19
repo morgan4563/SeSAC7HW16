@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ChatListCollectionViewCell" customModule="SeSAC7HW16" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="322" height="61"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="322" height="61"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="igd-Ip-AJN">
+                        <rect key="frame" x="0.0" y="0.0" width="61" height="61"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="igd-Ip-AJN" secondAttribute="height" id="0pl-1F-9Qz"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rrz-el-iHc">
+                        <rect key="frame" x="69" y="0.0" width="253" height="61"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tgy-ge-sb5">
+                                <rect key="frame" x="0.0" y="0.0" width="253" height="28.666666666666668"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3l-MT-eGM">
+                                        <rect key="frame" x="0.0" y="0.0" width="197" height="28.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.01.12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBa-eJ-4HK">
+                                        <rect key="frame" x="205" y="0.0" width="48" height="28.666666666666668"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="jD6-Vn-pAZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="왜요? 요즘 코딩이 대세인데" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fjz-da-CaH">
+                                <rect key="frame" x="0.0" y="32.666666666666664" width="253" height="28.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Tgy-ge-sb5" firstAttribute="leading" secondItem="rrz-el-iHc" secondAttribute="leading" id="32T-Jh-c7V"/>
+                            <constraint firstAttribute="trailing" secondItem="Fjz-da-CaH" secondAttribute="trailing" id="3zK-cy-qnE"/>
+                            <constraint firstAttribute="trailing" secondItem="Tgy-ge-sb5" secondAttribute="trailing" id="cih-mL-EVm"/>
+                            <constraint firstItem="Fjz-da-CaH" firstAttribute="leading" secondItem="rrz-el-iHc" secondAttribute="leading" id="yhd-5B-uyy"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="rrz-el-iHc" firstAttribute="leading" secondItem="igd-Ip-AJN" secondAttribute="trailing" constant="8" id="0bG-QX-BWh"/>
+                <constraint firstAttribute="bottom" secondItem="igd-Ip-AJN" secondAttribute="bottom" id="4Ml-xd-RUe"/>
+                <constraint firstItem="igd-Ip-AJN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6mZ-PM-Y28"/>
+                <constraint firstAttribute="bottom" secondItem="rrz-el-iHc" secondAttribute="bottom" id="8bi-J6-Unj"/>
+                <constraint firstItem="rrz-el-iHc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ds7-Ka-nY7"/>
+                <constraint firstAttribute="trailing" secondItem="rrz-el-iHc" secondAttribute="trailing" id="nLK-Ti-vaO"/>
+                <constraint firstItem="igd-Ip-AJN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pz5-XH-0ou"/>
+            </constraints>
+            <size key="customSize" width="322" height="61"/>
+            <point key="canvasLocation" x="229.00763358778624" y="22.183098591549296"/>
+        </collectionViewCell>
+    </objects>
+</document>
