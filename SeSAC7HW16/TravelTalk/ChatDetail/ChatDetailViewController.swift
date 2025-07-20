@@ -43,13 +43,16 @@ class ChatDetailViewController: UIViewController {
 
     }
 
-
     private func configureUI() {
         guard let chatRoomIndex else {
             print("chatRoomItem 반영안됨 error")
             return
         }
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+
         navigationItem.title = ChatList.list[chatRoomIndex].chatroomName
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
 
     private func configureTableView() {
