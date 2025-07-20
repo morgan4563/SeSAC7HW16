@@ -40,6 +40,8 @@ class ChatDetailViewController: UIViewController {
 
         messageTextField.text = ""
         chatTableView.reloadData()
+
+		scrollTableViewToBottom()
     }
 
     private func configureUI() {
@@ -66,6 +68,14 @@ class ChatDetailViewController: UIViewController {
         chatTableView.register(otherNib, forCellReuseIdentifier: "OtherChatTableViewCell")
 
         chatTableView.separatorStyle = .none
+        scrollTableViewToBottom()
+    }
+
+    private func scrollTableViewToBottom() {
+        guard let chatRoomIndex else { return }
+
+        let endIndex = IndexPath(row: ChatList.list[chatRoomIndex].chatList.count - 1, section: 0)
+        chatTableView.scrollToRow(at: endIndex, at: .bottom, animated: true)
     }
 }
 
