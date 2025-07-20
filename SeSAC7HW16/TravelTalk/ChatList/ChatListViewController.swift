@@ -18,6 +18,10 @@ class ChatListViewController: UIViewController {
 		configureCollectionView()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        chatListCollectionView.reloadData()
+    }
+
     private func configureUI() {
         navigationItem.title = "TRAVEL TALK"
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
@@ -65,7 +69,6 @@ extension ChatListViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChatListCollectionViewCell", for: indexPath) as! ChatListCollectionViewCell
 
         cell.configureData(index: indexPath)
