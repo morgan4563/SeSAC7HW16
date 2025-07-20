@@ -11,6 +11,7 @@ class ChatDetailViewController: UIViewController {
 
     @IBOutlet var chatTableView: UITableView!
     @IBOutlet var messageTextField: UITextField!
+    @IBOutlet var messageTextFieldBackground: UIView!
     @IBOutlet var messageSendButton: UIButton!
     
     var chatRoomIndex: Int?
@@ -51,6 +52,8 @@ class ChatDetailViewController: UIViewController {
 
         navigationItem.title = ChatList.list[chatRoomIndex].chatroomName
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+
+        messageTextFieldBackground.layer.cornerRadius = 10
     }
 
     private func configureTableView() {
