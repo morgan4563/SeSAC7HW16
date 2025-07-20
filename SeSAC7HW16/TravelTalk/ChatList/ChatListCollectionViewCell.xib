@@ -22,20 +22,20 @@
                             <constraint firstAttribute="width" secondItem="igd-Ip-AJN" secondAttribute="height" id="0pl-1F-9Qz"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rrz-el-iHc">
-                        <rect key="frame" x="69" y="0.0" width="253" height="61"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="rrz-el-iHc">
+                        <rect key="frame" x="69" y="4" width="253" height="53"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tgy-ge-sb5">
-                                <rect key="frame" x="0.0" y="0.0" width="253" height="28.666666666666668"/>
+                                <rect key="frame" x="0.0" y="0.0" width="253" height="26.666666666666668"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3l-MT-eGM">
-                                        <rect key="frame" x="0.0" y="0.0" width="193" height="28.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="193" height="26.666666666666668"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88.88.88" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBa-eJ-4HK">
-                                        <rect key="frame" x="201" y="0.0" width="52" height="28.666666666666668"/>
+                                        <rect key="frame" x="201" y="0.0" width="52" height="26.666666666666668"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="52" id="jD6-Vn-pAZ"/>
                                         </constraints>
@@ -46,7 +46,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="왜요? 요즘 코딩이 대세인데" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fjz-da-CaH">
-                                <rect key="frame" x="0.0" y="32.666666666666664" width="253" height="28.333333333333336"/>
+                                <rect key="frame" x="0.0" y="26.666666666666671" width="253" height="26.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -65,11 +65,11 @@
             <constraints>
                 <constraint firstItem="rrz-el-iHc" firstAttribute="leading" secondItem="igd-Ip-AJN" secondAttribute="trailing" constant="8" id="0bG-QX-BWh"/>
                 <constraint firstAttribute="bottom" secondItem="igd-Ip-AJN" secondAttribute="bottom" id="4Ml-xd-RUe"/>
+                <constraint firstAttribute="bottom" secondItem="rrz-el-iHc" secondAttribute="bottom" constant="4" id="4NZ-1a-2Mu"/>
                 <constraint firstItem="igd-Ip-AJN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6mZ-PM-Y28"/>
-                <constraint firstAttribute="bottom" secondItem="rrz-el-iHc" secondAttribute="bottom" id="8bi-J6-Unj"/>
-                <constraint firstItem="rrz-el-iHc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ds7-Ka-nY7"/>
                 <constraint firstAttribute="trailing" secondItem="rrz-el-iHc" secondAttribute="trailing" id="nLK-Ti-vaO"/>
                 <constraint firstItem="igd-Ip-AJN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pz5-XH-0ou"/>
+                <constraint firstItem="rrz-el-iHc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="wiC-Dt-fCJ"/>
             </constraints>
             <size key="customSize" width="322" height="61"/>
             <connections>

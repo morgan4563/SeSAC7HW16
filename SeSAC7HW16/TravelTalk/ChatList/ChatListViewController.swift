@@ -41,7 +41,7 @@ class ChatListViewController: UIViewController {
         let deviceWidth = UIScreen.main.bounds.width
         let cellWidth = deviceWidth - (16 * 2)
 
-        layout.itemSize = CGSize(width: cellWidth, height: 100)
+        layout.itemSize = CGSize(width: cellWidth, height: 60)
         layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         layout.scrollDirection = .vertical
 
