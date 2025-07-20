@@ -9,11 +9,36 @@ import UIKit
 
 class OtherChatTableViewCell: UITableViewCell {
 
+    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
     @IBOutlet var chatLabel: UILabel!
+    @IBOutlet var chatBubble: UIView!
+    @IBOutlet var dateLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        configureUI()
+    }
+
+    private func configureUI() {
+        profileImage.layer.cornerRadius = profileImage.bounds.width / 2
+        profileImage.clipsToBounds = true
+
+        chatBubble.layer.cornerRadius = 10
+        chatBubble.layer.borderWidth = 1
+        chatBubble.layer.borderColor = UIColor.lightGray.cgColor
+    }
+
+    func configureData(chat: Chat) {
+        profileImage.image = UIImage(named: chat.user.image)
+        nameLabel.text = chat.user.name
+        chatLabel.text = chat.message
+
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm"
+        let date = df.date(from: chat.date)
+        df.dateFormat = "yy.MM.dd"
+        dateLabel.text = df.string(from: date ?? Date())
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -21,5 +46,4 @@ class OtherChatTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

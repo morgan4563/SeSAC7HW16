@@ -10,16 +10,28 @@ import UIKit
 class MyChatTableViewCell: UITableViewCell {
 
     @IBOutlet var chatLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var chatBubble: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        configureUI()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    private func configureUI() {
+        chatBubble.layer.cornerRadius = 10
+        chatBubble.layer.borderWidth = 1
+        chatBubble.layer.borderColor = UIColor.lightGray.cgColor
+        chatBubble.backgroundColor = UIColor.systemGray6
     }
-    
+
+    func configureData(chat: Chat) {
+        chatLabel.text = chat.message
+
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm"
+        let date = df.date(from: chat.date)
+        df.dateFormat = "yy.MM.dd"
+        dateLabel.text = df.string(from: date ?? Date())
+    }
 }

@@ -63,6 +63,8 @@ class ChatDetailViewController: UIViewController {
         let otherNib = UINib(nibName: "OtherChatTableViewCell", bundle: nil)
         chatTableView.register(myNib, forCellReuseIdentifier: "MyChatTableViewCell")
         chatTableView.register(otherNib, forCellReuseIdentifier: "OtherChatTableViewCell")
+
+        chatTableView.separatorStyle = .none
     }
 }
 
@@ -84,11 +86,11 @@ extension ChatDetailViewController: UITableViewDelegate, UITableViewDataSource {
 
         if chat.user.name == ChatList.me.name {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyChatTableViewCell") as! MyChatTableViewCell
-            cell.chatLabel.text = chat.message
+            cell.configureData(chat: chat)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "OtherChatTableViewCell") as! OtherChatTableViewCell
-            cell.chatLabel.text = chat.message
+            cell.configureData(chat: chat)
             return cell
         }
     }
