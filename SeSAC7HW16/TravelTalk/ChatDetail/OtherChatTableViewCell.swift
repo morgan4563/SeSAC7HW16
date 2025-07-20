@@ -37,7 +37,8 @@ class OtherChatTableViewCell: UITableViewCell {
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd HH:mm"
         let date = df.date(from: chat.date)
-        df.dateFormat = "yy.MM.dd"
+        df.locale = Locale(identifier: "ko_KR")
+        df.dateFormat = "MM.dd a"
         dateLabel.text = df.string(from: date ?? Date())
     }
 

@@ -24,7 +24,6 @@ class ChatDetailViewController: UIViewController {
 
     @IBAction func messageSendButtonTapped(_ sender: UIButton) {
 		addMessage()
-
     }
 
     func addMessage() {
@@ -40,7 +39,6 @@ class ChatDetailViewController: UIViewController {
 
         messageTextField.text = ""
         chatTableView.reloadData()
-
     }
 
     private func configureUI() {

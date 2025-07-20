@@ -20,6 +20,9 @@ class ChatListViewController: UIViewController {
 
     private func configureUI() {
         navigationItem.title = "TRAVEL TALK"
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        backBarButtonItem.tintColor = .black
+        navigationItem.backBarButtonItem = backBarButtonItem
     }
 
     private func configureSearchController() {
