@@ -72,16 +72,16 @@
                                 <rect key="frame" x="32" y="668" width="350" height="52"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVQ-sR-azh">
-                                        <rect key="frame" x="8" y="9" width="342" height="34.333333333333336"/>
+                                        <rect key="frame" x="8" y="8" width="342" height="36"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="메세지를 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t9U-l1-uFe">
-                                                <rect key="frame" x="0.0" y="0.0" width="293" height="34.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="293" height="36"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0y-We-Tmh">
-                                                <rect key="frame" x="293" y="0.0" width="49" height="34.333333333333336"/>
+                                                <rect key="frame" x="293" y="0.0" width="49" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="49" id="4vx-Dg-50i"/>
                                                 </constraints>
@@ -99,6 +99,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="GGu-Og-EEE"/>
                                     <constraint firstItem="qVQ-sR-azh" firstAttribute="centerY" secondItem="LVu-kK-zfv" secondAttribute="centerY" id="RO8-H5-cCL"/>
+                                    <constraint firstAttribute="bottom" secondItem="qVQ-sR-azh" secondAttribute="bottom" constant="8" id="T7R-XT-Fr5"/>
+                                    <constraint firstItem="qVQ-sR-azh" firstAttribute="top" secondItem="LVu-kK-zfv" secondAttribute="top" constant="8" id="fpI-av-EpT"/>
                                     <constraint firstItem="qVQ-sR-azh" firstAttribute="leading" secondItem="LVu-kK-zfv" secondAttribute="leading" constant="8" id="igh-Ad-eD1"/>
                                     <constraint firstAttribute="trailing" secondItem="qVQ-sR-azh" secondAttribute="trailing" id="jzE-JR-s9t"/>
                                 </constraints>

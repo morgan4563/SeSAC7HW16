@@ -10,6 +10,7 @@ import UIKit
 class ChatListViewController: UIViewController {
 
     @IBOutlet var chatListCollectionView: UICollectionView!
+    private var filtedIndexes: [Int] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,27 +59,41 @@ class ChatListViewController: UIViewController {
 
 extension ChatListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        return
+
+        let keyword = searchController.searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
+
+        if keyword.isEmpty {
+            filtedIndexes.removeAll()
+        } else {
+            filtedIndexes = ChatList.list.enumerated().filter {
+                $0.element.chatroomName.lowercased().contains(keyword)
+            }.map {
+                $0.offset
+            }
+        }
+        chatListCollectionView.reloadData()
     }
 }
 
 extension ChatListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ChatList.list.count
+        return filtedIndexes.count != 0 ? filtedIndexes.count : ChatList.list.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChatListCollectionViewCell", for: indexPath) as! ChatListCollectionViewCell
 
-        cell.configureData(index: indexPath)
+        let availableIndex = filtedIndexes.count != 0 ? filtedIndexes[indexPath.item] : indexPath.item
+        cell.configureData(index: IndexPath(row: availableIndex, section: 0))
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ChatDetailViewController") as! ChatDetailViewController
-        vc.chatRoomIndex = indexPath.item
+        let availableIndex = filtedIndexes.count != 0 ? filtedIndexes[indexPath.item] : indexPath.item
+        vc.chatRoomIndex = ChatList.list[availableIndex].chatroomId - 1
 
         navigationController?.pushViewController(vc, animated: true)
     }
