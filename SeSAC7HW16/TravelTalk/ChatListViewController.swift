@@ -13,7 +13,22 @@ class ChatListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+        configureSearchController()
 		configureCollectionView()
+    }
+
+    private func configureUI() {
+        navigationItem.title = "TRAVEL TALK"
+    }
+
+    private func configureSearchController() {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "친구 이름을 검색해보세요"
+        searchController.hidesNavigationBarDuringPresentation = false
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
 
     private func configureCollectionView() {
@@ -31,6 +46,12 @@ class ChatListViewController: UIViewController {
         layout.scrollDirection = .vertical
 
         chatListCollectionView.collectionViewLayout = layout
+    }
+}
+
+extension ChatListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        return
     }
 }
 
