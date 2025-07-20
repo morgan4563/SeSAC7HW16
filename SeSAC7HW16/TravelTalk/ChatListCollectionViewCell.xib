@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ChatListCollectionViewCell" customModule="SeSAC7HW16" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChatListCollectionViewCell" id="gTV-IL-0wX" customClass="ChatListCollectionViewCell" customModule="SeSAC7HW16" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="322" height="61"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -29,15 +29,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="253" height="28.666666666666668"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3l-MT-eGM">
-                                        <rect key="frame" x="0.0" y="0.0" width="197" height="28.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="193" height="28.666666666666668"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24.01.12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBa-eJ-4HK">
-                                        <rect key="frame" x="205" y="0.0" width="48" height="28.666666666666668"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88.88.88" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBa-eJ-4HK">
+                                        <rect key="frame" x="201" y="0.0" width="52" height="28.666666666666668"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="48" id="jD6-Vn-pAZ"/>
+                                            <constraint firstAttribute="width" constant="52" id="jD6-Vn-pAZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
@@ -72,6 +72,12 @@
                 <constraint firstItem="igd-Ip-AJN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pz5-XH-0ou"/>
             </constraints>
             <size key="customSize" width="322" height="61"/>
+            <connections>
+                <outlet property="dateLabel" destination="RBa-eJ-4HK" id="pvB-Ka-y6M"/>
+                <outlet property="imageView" destination="igd-Ip-AJN" id="MGP-zg-wpH"/>
+                <outlet property="messageLabel" destination="Fjz-da-CaH" id="sTA-AM-Wdb"/>
+                <outlet property="nameLabel" destination="B3l-MT-eGM" id="PJY-GN-tJ7"/>
+            </connections>
             <point key="canvasLocation" x="229.00763358778624" y="22.183098591549296"/>
         </collectionViewCell>
     </objects>

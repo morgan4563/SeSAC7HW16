@@ -49,7 +49,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="UgA-6B-2z7"/>
                     <connections>
-                        <outlet property="ChatListCollectionView" destination="xAH-1J-lhh" id="zFC-AE-2SN"/>
+                        <outlet property="chatListCollectionView" destination="xAH-1J-lhh" id="zFC-AE-2SN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
