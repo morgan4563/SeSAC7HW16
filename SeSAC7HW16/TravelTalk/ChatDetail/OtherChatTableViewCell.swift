@@ -38,13 +38,7 @@ class OtherChatTableViewCell: UITableViewCell {
         df.dateFormat = "yyyy-MM-dd HH:mm"
         let date = df.date(from: chat.date)
         df.locale = Locale(identifier: "ko_KR")
-        df.dateFormat = "MM.dd a"
+        df.dateFormat = "HH:MM a"
         dateLabel.text = df.string(from: date ?? Date())
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }
