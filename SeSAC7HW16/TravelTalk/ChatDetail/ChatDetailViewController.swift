@@ -68,6 +68,7 @@ class ChatDetailViewController: UIViewController {
         chatTableView.register(otherNib, forCellReuseIdentifier: "OtherChatTableViewCell")
 
         chatTableView.separatorStyle = .none
+        chatTableView.allowsSelection = false
         scrollTableViewToBottom()
     }
 
