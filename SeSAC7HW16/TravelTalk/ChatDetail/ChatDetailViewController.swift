@@ -10,7 +10,10 @@ import UIKit
 class ChatDetailViewController: UIViewController {
 
     @IBOutlet var chatTableView: UITableView!
-    @IBOutlet var messageTextField: UITextField!
+
+    @IBOutlet var messageTextView: UITextView!
+    @IBOutlet var messageTextViewHeight: NSLayoutConstraint!
+    @IBOutlet var messageTextViewPlaceholder: UILabel!
     @IBOutlet var messageTextFieldBackground: UIView!
     @IBOutlet var messageSendButton: UIButton!
     
@@ -21,6 +24,7 @@ class ChatDetailViewController: UIViewController {
 
 		configureUI()
         configureTableView()
+        configureMessageView()
     }
 
     @IBAction func messageSendButtonTapped(_ sender: UIButton) {
@@ -28,7 +32,7 @@ class ChatDetailViewController: UIViewController {
     }
 
     func addMessage() {
-        guard let text = messageTextField.text, !text.isEmpty else { return }
+        guard let text = messageTextView.text, !text.isEmpty else { return }
         guard let chatRoomIndex else { return }
 
         let formatter = DateFormatter()
@@ -38,7 +42,7 @@ class ChatDetailViewController: UIViewController {
         let newChat = Chat(user: ChatList.me, date: currentDate, message: text)
         ChatList.list[chatRoomIndex].chatList.append(newChat)
 
-        messageTextField.text = ""
+        messageTextView.text = ""
         chatTableView.reloadData()
 
 		scrollTableViewToBottom()
@@ -56,6 +60,10 @@ class ChatDetailViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
 
         messageTextFieldBackground.layer.cornerRadius = 10
+    }
+
+    private func configureMessageView() {
+        messageTextView.delegate = self
     }
 
     private func configureTableView() {
@@ -105,5 +113,12 @@ extension ChatDetailViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configureData(chat: chat)
             return cell
         }
+    }
+}
+
+extension ChatDetailViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        messageTextViewPlaceholder.isHidden = !textView.text.isEmpty
+		messageTextViewHeight.constant = min(textView.contentSize.height, CGFloat(60))
     }
 }

@@ -74,12 +74,39 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVQ-sR-azh">
                                         <rect key="frame" x="8" y="8" width="342" height="36"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="메세지를 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t9U-l1-uFe">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QE9-rO-EPe">
                                                 <rect key="frame" x="0.0" y="0.0" width="293" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 메시지를 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRw-6Z-ig7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="293" height="36"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemGray4Color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="arX-Wz-75M">
+                                                        <rect key="frame" x="0.0" y="0.0" width="293" height="36"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="36" id="w08-iV-e8C"/>
+                                                        </constraints>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="arX-Wz-75M" secondAttribute="bottom" id="2mg-oa-C60"/>
+                                                    <constraint firstAttribute="bottom" secondItem="RRw-6Z-ig7" secondAttribute="bottom" id="AMM-jD-1GL"/>
+                                                    <constraint firstItem="RRw-6Z-ig7" firstAttribute="top" secondItem="QE9-rO-EPe" secondAttribute="top" id="alj-Me-X6Z"/>
+                                                    <constraint firstItem="arX-Wz-75M" firstAttribute="leading" secondItem="QE9-rO-EPe" secondAttribute="leading" id="f6x-Eu-GaX"/>
+                                                    <constraint firstItem="RRw-6Z-ig7" firstAttribute="leading" secondItem="QE9-rO-EPe" secondAttribute="leading" id="iq8-EF-xMF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="RRw-6Z-ig7" secondAttribute="trailing" id="jNa-z2-ZWt"/>
+                                                    <constraint firstItem="arX-Wz-75M" firstAttribute="top" secondItem="QE9-rO-EPe" secondAttribute="top" id="nfg-fl-nrh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="arX-Wz-75M" secondAttribute="trailing" id="sHD-jV-phf"/>
+                                                </constraints>
+                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0y-We-Tmh">
                                                 <rect key="frame" x="293" y="0.0" width="49" height="36"/>
                                                 <constraints>
@@ -93,11 +120,16 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="QE9-rO-EPe" secondAttribute="bottom" id="6yW-bO-Jp4"/>
+                                            <constraint firstItem="QE9-rO-EPe" firstAttribute="top" secondItem="qVQ-sR-azh" secondAttribute="top" id="aBY-Oj-dWd"/>
+                                            <constraint firstAttribute="bottom" secondItem="e0y-We-Tmh" secondAttribute="bottom" id="e9e-pt-Bwd"/>
+                                            <constraint firstItem="e0y-We-Tmh" firstAttribute="top" secondItem="qVQ-sR-azh" secondAttribute="top" id="v40-e2-EJI"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="GGu-Og-EEE"/>
                                     <constraint firstItem="qVQ-sR-azh" firstAttribute="centerY" secondItem="LVu-kK-zfv" secondAttribute="centerY" id="RO8-H5-cCL"/>
                                     <constraint firstAttribute="bottom" secondItem="qVQ-sR-azh" secondAttribute="bottom" constant="8" id="T7R-XT-Fr5"/>
                                     <constraint firstItem="qVQ-sR-azh" firstAttribute="top" secondItem="LVu-kK-zfv" secondAttribute="top" constant="8" id="fpI-av-EpT"/>
@@ -121,8 +153,10 @@
                     <connections>
                         <outlet property="chatTableView" destination="Nqu-KT-LqG" id="54y-bK-hLW"/>
                         <outlet property="messageSendButton" destination="e0y-We-Tmh" id="B0E-r0-JXW"/>
-                        <outlet property="messageTextField" destination="t9U-l1-uFe" id="bdT-Tp-P5e"/>
                         <outlet property="messageTextFieldBackground" destination="LVu-kK-zfv" id="lcQ-Pr-nID"/>
+                        <outlet property="messageTextView" destination="arX-Wz-75M" id="SxQ-Ni-e2B"/>
+                        <outlet property="messageTextViewHeight" destination="w08-iV-e8C" id="Ow2-QM-SjW"/>
+                        <outlet property="messageTextViewPlaceholder" destination="RRw-6Z-ig7" id="KNX-Xu-mqH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZu-nb-dn2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -150,11 +184,17 @@
     </scenes>
     <resources>
         <image name="chevron.forward.square" catalog="system" width="128" height="114"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
