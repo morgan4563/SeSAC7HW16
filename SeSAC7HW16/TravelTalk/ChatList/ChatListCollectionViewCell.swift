@@ -28,7 +28,9 @@ class ChatListCollectionViewCell: UICollectionViewCell {
         messageLabel.textColor = .systemGray
         dateLabel.textColor = .systemGray
     }
+}
 
+extension ChatListCollectionViewCell: CollectionViewDesignProtocol {
     func configureData(index: IndexPath) {
         let chatRoom = ChatList.list[index.item]
         imageView.image = UIImage(named: chatRoom.chatroomImage)

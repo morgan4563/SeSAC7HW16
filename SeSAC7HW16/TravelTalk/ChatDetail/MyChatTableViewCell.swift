@@ -24,7 +24,9 @@ class MyChatTableViewCell: UITableViewCell {
         chatBubble.layer.borderColor = UIColor.lightGray.cgColor
         chatBubble.backgroundColor = UIColor.systemGray6
     }
+}
 
+extension MyChatTableViewCell: TableCellDesignProtocol {
     func configureData(chat: Chat) {
         chatLabel.text = chat.message
 

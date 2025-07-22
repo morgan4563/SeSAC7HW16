@@ -28,7 +28,9 @@ class OtherChatTableViewCell: UITableViewCell {
         chatBubble.layer.borderWidth = 1
         chatBubble.layer.borderColor = UIColor.lightGray.cgColor
     }
+}
 
+extension OtherChatTableViewCell: TableCellDesignProtocol {
     func configureData(chat: Chat) {
         profileImage.image = UIImage(named: chat.user.image)
         nameLabel.text = chat.user.name
