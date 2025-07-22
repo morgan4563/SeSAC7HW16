@@ -19,6 +19,11 @@ class ChatDetailViewController: UIViewController {
     
     var chatRoomIndex: Int?
 
+    var chatRoom: ChatRoom? {
+        guard let index = chatRoomIndex else { return nil }
+        return ChatList.list[index]
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,14 +54,14 @@ class ChatDetailViewController: UIViewController {
     }
 
     private func configureUI() {
-        guard let chatRoomIndex else {
+        guard let chatRoom else {
             print("chatRoomItem 반영안됨 error")
             return
         }
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
 
-        navigationItem.title = ChatList.list[chatRoomIndex].chatroomName
+        navigationItem.title = chatRoom.chatroomName
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
 
         messageTextFieldBackground.layer.cornerRadius = 10
@@ -81,28 +86,28 @@ class ChatDetailViewController: UIViewController {
     }
 
     private func scrollTableViewToBottom() {
-        guard let chatRoomIndex else { return }
+        guard let chatRoom else { return }
 
-        let endIndex = IndexPath(row: ChatList.list[chatRoomIndex].chatList.count - 1, section: 0)
+        let endIndex = IndexPath(row: chatRoom.chatList.count - 1, section: 0)
         chatTableView.scrollToRow(at: endIndex, at: .bottom, animated: true)
     }
 }
 
 extension ChatDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let chatRoomIndex else {
+        guard let chatRoom else {
             print("chatRoomItem 반영안됨 error")
             return 0
         }
-        return ChatList.list[chatRoomIndex].chatList.count
+        return chatRoom.chatList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let chatRoomIndex else {
+        guard let chatRoom else {
             print("chatRoomItem 반영안됨 error")
             return UITableViewCell()
         }
-        let chat = ChatList.list[chatRoomIndex].chatList[indexPath.row]
+        let chat = chatRoom.chatList[indexPath.row]
 
         if chat.user.name == ChatList.me.name {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyChatTableViewCell") as! MyChatTableViewCell
