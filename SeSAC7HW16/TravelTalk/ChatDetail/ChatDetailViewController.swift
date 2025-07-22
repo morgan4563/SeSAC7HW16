@@ -40,9 +40,7 @@ class ChatDetailViewController: UIViewController {
         guard let text = messageTextView.text, !text.isEmpty else { return }
         guard let chatRoomIndex else { return }
 
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
-        let currentDate = formatter.string(from: Date())
+        let currentDate = DateFormatters.inputFormatter.string(from: Date())
 
         let newChat = Chat(user: ChatList.me, date: currentDate, message: text)
         ChatList.list[chatRoomIndex].chatList.append(newChat)
