@@ -38,11 +38,12 @@ extension ChatListCollectionViewCell: CollectionViewDesignProtocol {
 
         if let lastChat = chatRoom.chatList.last {
             messageLabel.text = lastChat.message
-            let df = DateFormatter()
-            df.dateFormat = "yyyy-MM-dd HH:mm"
-            let date = df.date(from: lastChat.date)
-            df.dateFormat = "yy.MM.dd"
-            dateLabel.text = df.string(from: date ?? Date())
+
+            if let date = DateFormatters.inputFormatter.date(from: lastChat.date) {
+                dateLabel.text = DateFormatters.outputDateTypeFormatter.string(from: date)
+            } else {
+                dateLabel.text = ""
+            }
         }
     }
 }

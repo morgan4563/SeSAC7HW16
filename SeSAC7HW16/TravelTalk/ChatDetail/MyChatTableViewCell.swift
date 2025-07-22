@@ -30,11 +30,10 @@ extension MyChatTableViewCell: TableCellDesignProtocol {
     func configureData(chat: Chat) {
         chatLabel.text = chat.message
 
-        let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd HH:mm"
-        let date = df.date(from: chat.date)
-        df.locale = Locale(identifier: "ko_KR")
-        df.dateFormat = "HH:MM a"
-        dateLabel.text = df.string(from: date ?? Date())
+        if let date = DateFormatters.inputFormatter.date(from: chat.date) {
+            dateLabel.text = DateFormatters.outputTimeTypeFormatter.string(from: date)
+        } else {
+            dateLabel.text = ""
+        }
     }
 }
